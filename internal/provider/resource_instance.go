@@ -61,7 +61,7 @@ func resourceInstanceCreate(ctx context.Context, d *schema.ResourceData, meta an
 	tflog.Trace(ctx, "created an instance resource")
 
 	err := fmt.Errorf("not implemented")
-	tfErr := flex.TerraformErrorf(err, fmt.Sprintf("IBMPISession failed: %s", err.Error()), "ibm_pi_available_hosts", "create")
+	tfErr := flex.TerraformErrorf(err, fmt.Sprintf("resourceInstanceCreate failed: %s", err.Error()), "scaffolding_instance", "create")
 	log.Printf("[DEBUG]\n%s", tfErr.GetDebugMessage())
 	return tfErr.GetDiag()
 }
@@ -71,7 +71,7 @@ func resourceInstanceRead(ctx context.Context, d *schema.ResourceData, meta any)
 	// client := meta.(*apiClient)
 
 	err := fmt.Errorf("not implemented")
-	tfErr := flex.TerraformErrorf(err, fmt.Sprintf("IBMPISession failed: %s", err.Error()), "ibm_pi_available_hosts", "read")
+	tfErr := flex.TerraformErrorf(err, fmt.Sprintf("resourceInstanceRead failed: %s", err.Error()), "scaffolding_instance", "read")
 	log.Printf("[DEBUG]\n%s", tfErr.GetDebugMessage())
 	return tfErr.GetDiag()
 }
@@ -81,7 +81,7 @@ func resourceInstanceUpdate(ctx context.Context, d *schema.ResourceData, meta an
 	// client := meta.(*apiClient)
 
 	err := fmt.Errorf("not implemented")
-	tfErr := flex.TerraformErrorf(err, fmt.Sprintf("IBMPISession failed: %s", err.Error()), "ibm_pi_available_hosts", "update")
+	tfErr := flex.TerraformErrorf(err, fmt.Sprintf("resourceInstanceUpdate failed: %s", err.Error()), "scaffolding_instance", "update")
 	log.Printf("[DEBUG]\n%s", tfErr.GetDebugMessage())
 	return tfErr.GetDiag()
 }
@@ -91,7 +91,7 @@ func resourceInstanceDelete(ctx context.Context, d *schema.ResourceData, meta an
 	// client := meta.(*apiClient)
 
 	err := fmt.Errorf("not implemented")
-	tfErr := flex.TerraformErrorf(err, fmt.Sprintf("IBMPISession failed: %s", err.Error()), "ibm_pi_available_hosts", "delete")
+	tfErr := flex.TerraformErrorf(err, fmt.Sprintf("resourceInstanceDelete failed: %s", err.Error()), "scaffolding_instance", "delete")
 	log.Printf("[DEBUG]\n%s", tfErr.GetDebugMessage())
 	return tfErr.GetDiag()
 }
