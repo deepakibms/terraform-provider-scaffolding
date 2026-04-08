@@ -34,6 +34,8 @@ func New(version string) func() *schema.Provider {
 			},
 			ResourcesMap: map[string]*schema.Resource{
 				"scaffolding_resource": resourceScaffolding(),
+				"scaffolding_example":  resourceExample(),
+				"scaffolding_instance": resourceInstance(),
 			},
 		}
 
