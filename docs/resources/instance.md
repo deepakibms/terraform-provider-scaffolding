@@ -43,5 +43,24 @@ resource "scaffolding_instance" "example" {
 
 Import is supported using the following syntax:
 
+```terraform
+import {
+  to = scaffolding_instance.example
+  id = "instance-id"
+}
+```
+
+For resources created with `for_each`:
+
+```terraform
+import {
+  for_each = toset(["instance-1", "instance-2", "instance-3"])
+  to       = scaffolding_instance.example[each.key]
+  id       = each.key
+}
+```
+
+Or using the legacy command-line syntax:
+
 ```shell
 terraform import scaffolding_instance.example instance-id
