@@ -5,10 +5,13 @@ package provider
 
 import (
 	"context"
+	"fmt"
+	"log"
 
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/hashicorp/terraform-provider-scaffolding/internal/provider/flex"
 )
 
 func resourceInstance() *schema.Resource {
@@ -57,28 +60,40 @@ func resourceInstanceCreate(ctx context.Context, d *schema.ResourceData, meta an
 	// for more information
 	tflog.Trace(ctx, "created an instance resource")
 
-	return diag.Errorf("not implemented")
+	err := fmt.Errorf("not implemented")
+	tfErr := flex.TerraformErrorf(err, fmt.Sprintf("resourceInstanceCreate failed: %s", err.Error()), "scaffolding_instance", "create")
+	log.Printf("[DEBUG]\n%s", tfErr.GetDebugMessage())
+	return tfErr.GetDiag()
 }
 
 func resourceInstanceRead(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
-	return diag.Errorf("not implemented")
+	err := fmt.Errorf("not implemented")
+	tfErr := flex.TerraformErrorf(err, fmt.Sprintf("resourceInstanceRead failed: %s", err.Error()), "scaffolding_instance", "read")
+	log.Printf("[DEBUG]\n%s", tfErr.GetDebugMessage())
+	return tfErr.GetDiag()
 }
 
 func resourceInstanceUpdate(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
-	return diag.Errorf("not implemented")
+	err := fmt.Errorf("not implemented")
+	tfErr := flex.TerraformErrorf(err, fmt.Sprintf("resourceInstanceUpdate failed: %s", err.Error()), "scaffolding_instance", "update")
+	log.Printf("[DEBUG]\n%s", tfErr.GetDebugMessage())
+	return tfErr.GetDiag()
 }
 
 func resourceInstanceDelete(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
-	return diag.Errorf("not implemented")
+	err := fmt.Errorf("not implemented")
+	tfErr := flex.TerraformErrorf(err, fmt.Sprintf("resourceInstanceDelete failed: %s", err.Error()), "scaffolding_instance", "delete")
+	log.Printf("[DEBUG]\n%s", tfErr.GetDebugMessage())
+	return tfErr.GetDiag()
 }
 
 // Made with Bob
