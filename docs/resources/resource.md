@@ -29,4 +29,10 @@ resource "scaffolding_resource" "example" {
 
 - `id` (String) The ID of this resource.
 
+## Import
 
+Import is supported using the following syntax:
+
+```shell
+terraform import scaffolding_resource.example my-id
+```
